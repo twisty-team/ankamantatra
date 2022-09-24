@@ -8,3 +8,4 @@ WCC2 final week
 - [ ] Good error handling
 - [ ] Populate data.json
 - [ ] Utils functions
+- [ ] Add "Ankamantatra/Malagasy" category
