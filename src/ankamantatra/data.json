@@ -1,0 +1,43 @@
+{
+    "questions": [
+        {
+            "question": "What is the capital of France?",
+            "category": "Geography",
+            "type": "unique",
+            "choices": [
+                "Paris",
+                "London",
+                "Berlin",
+                "Rome"
+            ],
+            "answer": "Paris"
+        },
+        {
+            "question": "Which of the following number are evens?",
+            "category": "Math",
+            "type": "multiple",
+            "choices": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "answer": [
+                "2",
+                "4"
+            ]
+        },
+        {
+            "question": "Who created the manga One Piece?",
+            "category": "Anime",
+            "type": "string",
+            "answer": "Eiichiro Oda"
+        }
+    ],
+    "types": [
+        "multiple",
+        "unique",
+        "number",
+        "string"
+    ]
+}
