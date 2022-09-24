@@ -2,10 +2,12 @@
 WCC2 final week
 
 ## TODO
-- [ ] List available questions
+- [x] List available questions
 - [ ] List available categories
-- [ ] Play quizz
+- [x] Play quizz
 - [ ] Good error handling
-- [ ] Populate data.json
-- [ ] Utils functions
+- [x] Populate data.json
+- [x] Utils functions
 - [ ] Add "Ankamantatra/Malagasy" category
+- [ ] Add automated testing
+- [ ] Add comments
