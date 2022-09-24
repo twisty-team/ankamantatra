@@ -1,10 +1,9 @@
 # ankamantatra
 WCC2 final week
 
-## Features
-- [ ] Add questions
+## TODO
 - [ ] List available questions
+- [ ] List available categories
 - [ ] Play quizz
 - [ ] Good error handling
-- [ ] Add categories
-- [ ] Use json for persistence
+- [ ] Populate data.json
