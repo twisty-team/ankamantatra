@@ -32,6 +32,12 @@
             "category": "Anime",
             "type": "string",
             "answer": "Eiichiro Oda"
+        },
+        {
+            "question": "How many countries are in Africa?",
+            "category": "Geography",
+            "type": "number",
+            "answer": "54"
         }
     ],
     "types": [
