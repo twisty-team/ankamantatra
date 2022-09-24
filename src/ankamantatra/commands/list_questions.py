@@ -7,13 +7,21 @@ from utils import *
 @click.option('--category', '-c')
 @click.option('--show-answer', '-sa', is_flag=True)
 @click.option('--show-category', '-sc', is_flag=True)
-def list_questions(category, show_answer, show_category):
+@click.option('--category-only', is_flag=True)
+def list_questions(category, show_answer, show_category, category_only):
+
     def display_question(question, category):
         click.echo(f'{question["question"]}')
         if show_answer:
             click.echo(f'--> {question["answer"]}\n')
         if show_category:
             click.echo(f'{category}')
+
+    if category_only:
+        categories = get_categories()
+        for category in categories:
+            click.echo(category)
+        return
 
     if category:
         try:
