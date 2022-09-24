@@ -1,9 +1,9 @@
 import click
 from click_help_colors import HelpColorsGroup, HelpColorsCommand
 
-from utils import *
-from commands.list_questions import list_questions
-from commands.play_quizz import play
+from ankamantatra.utils import *
+from ankamantatra.commands.list_questions import list_questions
+from ankamantatra.commands.play_quizz import play
 
 
 @click.group(
@@ -15,13 +15,15 @@ from commands.play_quizz import play
     version='1.0',
     prog_name='Ankamantatra'
 )
-def cli():
+def main():
+    """A simple quizz game CLI"""
     pass
 
 
-cli.add_command(list_questions)
-cli.add_command(play)
+main.add_command(list_questions)
+main.add_command(play)
 
 
 if __name__ == "__main__":
-    cli()
+    main()
+

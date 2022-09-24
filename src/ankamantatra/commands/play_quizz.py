@@ -1,7 +1,7 @@
 import click
 import random
 
-from utils import *
+from ankamantatra.utils import *
 
 
 def do_quiz(categorie):

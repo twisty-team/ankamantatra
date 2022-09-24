@@ -4,20 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ankamantatra"
-version = "0.1.0"
-description = ""
+version = "0.2.0"
 readme = "README.md"
+description = "A simple CLI quizz game"
 authors = [
-    {
-        name = "",
-        email = "gtsierenana@gmail.com",
-    },
-    {
-        name = "",
-        email = "",
-    }
+    { name = "Tsierenana Botramanagna Gracy", email = "gtsierenana@gmail.com" },
+    { name = "Radoheritiana", email = "radoheritiana.rhja.123@gmail.com" }
 ]
 license = { file = "LICENSE" }
-dependecies = [
-
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment",
 ]
+
+[project.urls]
+"GitHub" = "https://github.com/twisty-team/ankamantatra"
