@@ -7,3 +7,4 @@ WCC2 final week
 - [ ] Play quizz
 - [ ] Good error handling
 - [ ] Populate data.json
+- [ ] Utils functions
