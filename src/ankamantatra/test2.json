@@ -1,0 +1,47 @@
+{
+    "math": [
+        {
+            "question": "Which of the following number are evens?",
+            "type": "multiple",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            "answer": [
+                "2",
+                "4",
+                "6",
+                "8",
+                "10"
+            ]
+        },
+        {
+            "question": "What is the biggest countrie?",
+            "type": "unique",
+            "options": [
+                "Russia",
+                "China",
+                "USA",
+                "Canada"
+            ],
+            "answer": "USA"
+        },
+        {
+            "question": "How many countries are in Africa?",
+            "type": "number",
+            "answer": 54
+        },
+        {
+            "question": "Who is the first president of the USA?",
+            "answer": "George Washington"
+        }
+    ]
+}
