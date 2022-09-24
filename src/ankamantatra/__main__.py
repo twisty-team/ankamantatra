@@ -3,11 +3,11 @@ import random
 from click_help_colors import HelpColorsGroup, HelpColorsCommand
 import ecdsa
 
-from utils import get_categories_from_json, get_questions_from_json
+from utils import get_categories_from_json, get_questions_from_data
 
 def do_quiz(categorie):
     click.echo(click.style('Quiz categorie : ' + categorie, fg='blue'))
-    data = get_questions_from_json()[categorie]
+    data = get_questions_from_data(categorie)
     index = 1
     number_of_good_response = 0
     for types in data:
