@@ -3,63 +3,95 @@ import random
 
 from ankamantatra.utils import *
 
-
 def do_quiz(categorie):
-    click.echo(click.style('Quiz categorie : ' + categorie, fg='blue'))
+    click.echo('')
+    click.echo(click.style('___Quiz categorie___ : ' + categorie , fg='blue'))
     data = get_questions_of(categorie)
     index = 1
     number_of_good_response = 0
+    result = {}
     for type, questions in data.items():
-        for item in questions:
-            questions = item['question']
+        click.echo('')
+        click.echo(click.style(
+            f'___Question {index}___ : type = {type}', fg="blue")
+        )
+        random_key = random.randrange(0, len(questions))
+        question = questions[random_key]
+        click.echo(click.style(f"> {question['question']}"))
+        if type == "multiple":
+            opt = ""
+            i = 1
+            for val in question['options']:
+                opt += click.style(f"({i})", fg="yellow") + f" {val}  "
+                i += 1
+            click.echo(f"> Options : {opt}")
             click.echo(click.style(
-                f'Question {index} : type = {type}', fg="blue"))
-            key = random.randrange(0, len(questions))
-            click.echo(click.style(item['question'], fg="blue"))
+                "N.B : your reponse should be separated by space, for example: 1 3 5", fg="yellow")
+            )
+            reponses = click.prompt("your answer ")
+            rep_arr = reponses.split(' ')
+            count = 0
+            for ind in rep_arr:
+                if question["options"][int(ind) - 1] in question['answer']:
+                    count += 1
+            if count == len(question['answer']):
+                result['Q1'] = True
+                number_of_good_response += 1
+            else:
+                result['Q1'] = False
 
-            if type == "multiple":
-                opt = "| "
-                for val in item['options']:
-                    opt += f"{val}  |  "
-                click.echo(f"Options : {opt}")
-                click.echo(click.style(
-                    "your reponse should be separated by space", fg="yellow"))
-                reponses = click.prompt("your answer > ")
-                rep_arr = reponses.split(' ')
-                print(rep_arr)
-                count = 0
-                for ans in rep_arr:
-                    if ans in item['answer']:
-                        count += 1
-                if count == len(item['answer']):
-                    number_of_good_response += 1
+        elif type == "unique":
+            opt = ""
+            i = 1
+            for val in question['options']:
+                opt += click.style(f"({i})", fg="yellow") + f" {val} "
+                i += 1
+            click.echo(f"> Options : {opt}")
+            reponse_index = click.prompt("your answer ")
+            if question["options"][int(reponse_index) - 1] in question['answer']:
+                number_of_good_response += 1
+                result['Q2'] = True
+            else:
+                result['Q2'] = False
 
-            elif type == "unique":
-                opt = "| "
-                for val in item['options']:
-                    opt += f"{val}  |  "
-                click.echo(f"Options : {opt}")
-                reponse = click.prompt("your answer > ")
-                if reponse in item['answer']:
-                    number_of_good_response += 1
+        elif type == "number":
+            reponse = click.prompt("your answer > ", type=str)
+            if int(reponse) == question['answer']:
+                number_of_good_response += 1
+                result['Q3'] = True
+            else:
+                result['Q3'] = False
 
-            elif type == "number":
-                reponse = click.prompt("your answer > ", type=int)
-                if reponse == item['answer']:
-                    number_of_good_response += 1
-
-            elif type == "string":
-                reponse = click.prompt("your answer > ", type=str)
-                if reponse == item['answer']:
-                    number_of_good_response += 1
+        elif type == "string":
+            reponse = click.prompt("your answer > ", type=str)
+            if reponse == question['answer']:
+                number_of_good_response += 1
+                result['Q4'] = True
+            else:
+                result['Q4'] = False
 
         index += 1
-    click.echo(f"Total of good answer {number_of_good_response}")
+        
+    click.echo('')
+    click.echo(click.style('__RESULTATS__', fg='green'))
+    click.echo(f"Total of good answer {number_of_good_response}", nl=True)
+    v = 0
+    f = 0
+    for q, res in result.items():
+        if res:
+            v += 1
+        else:
+            f +=1
+        click.echo(f"{q} : {res}")
+    success_rate = (v / (v+f))*100
+    click.echo(click.style(f"Success rate : {success_rate} %", fg="green"))
 
 
-@click.command()
+@click.command(name="play", help="Use to play quiz game")
 @click.option('categorie', '--categorie', help="Help for Play command")
 def play(categorie):
+    click.echo(click.style('___QUIZ APP___', fg="green", bold=True))
+    click.echo('')
     categories = get_categories()
     index = 1
     while categorie not in categories:
@@ -67,10 +99,15 @@ def play(categorie):
         if index > 1:
             fg = 'red'
         click.echo(click.style("Please choose categorie : ", fg=fg))
-        val = "| "
+        val = ""
+        i = 1
         for cat in categories:
-            val += f" {cat}  |  "
+            val += click.style(f"({i})", fg='yellow') + f" {cat}  "
+            i += 1
         click.echo(val)
-        categorie = click.prompt("Categorie > ", type=str)
+        indice_categorie = click.prompt("Categorie ", type=int)
+        indice_categorie -= 1
+        if indice_categorie < len(categories) and indice_categorie >= 0:
+            categorie = categories[indice_categorie]
         index += 1
     do_quiz(categorie)
