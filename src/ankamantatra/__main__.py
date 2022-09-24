@@ -3,24 +3,23 @@ import random
 from click_help_colors import HelpColorsGroup, HelpColorsCommand
 import ecdsa
 
-from utils import get_categories_from_json, get_questions_from_data
+from utils import *
 
 def do_quiz(categorie):
     click.echo(click.style('Quiz categorie : ' + categorie, fg='blue'))
-    data = get_questions_from_data(categorie)
+    data = get_questions_of(categorie)
     index = 1
     number_of_good_response = 0
-    for types in data:
-        for item in types.items():
-            tp = item[0]
-            questions = item[1]
-            click.echo(click.style(f'Question {index} : type = {tp}', fg="blue"))
+    for type, questions in data.items():
+        for item in questions:
+            questions = item['question']
+            click.echo(click.style(f'Question {index} : type = {type}', fg="blue"))
             key = random.randrange(0, len(questions))
-            click.echo(click.style(questions[key]['question'], fg="blue"))
+            click.echo(click.style(item['question'], fg="blue"))
             
-            if tp == "multiple":
+            if type == "multiple":
                 opt = "| "
-                for val in questions[key]['options']:
+                for val in item['options']:
                     opt += f"{val}  |  "
                 click.echo(f"Options : {opt}")
                 click.echo(click.style("your reponse should be separated by space", fg="yellow"))
@@ -29,28 +28,28 @@ def do_quiz(categorie):
                 print(rep_arr)
                 count = 0
                 for ans in rep_arr:
-                    if ans in questions[key]['answer']:
+                    if ans in item['answer']:
                         count += 1
-                if count == len(questions[key]['answer']):
+                if count == len(item['answer']):
                     number_of_good_response += 1
                      
-            elif tp == "unique":
+            elif type == "unique":
                 opt = "| "
-                for val in questions[key]['options']:
+                for val in item['options']:
                     opt += f"{val}  |  "
                 click.echo(f"Options : {opt}")
                 reponse = click.prompt("your answer > ")
-                if reponse in questions[key]['answer']:
+                if reponse in item['answer']:
                     number_of_good_response += 1
                     
-            elif tp == "number":
+            elif type == "number":
                 reponse = click.prompt("your answer > ", type=int)
-                if reponse == questions[key]['answer']:
+                if reponse == item['answer']:
                     number_of_good_response += 1
                     
-            elif tp == "string":
+            elif type == "string":
                 reponse = click.prompt("your answer > ", type=str)
-                if reponse == questions[key]['answer']:
+                if reponse == item['answer']:
                     number_of_good_response += 1
            
         index +=1
@@ -73,7 +72,7 @@ def cli():
 @cli.command()
 @click.option('categorie', '--categorie', help="Help for Play command")
 def play(categorie):
-    categories = get_categories_from_json()
+    categories = get_categories()
     index = 1
     while categorie not in categories:
         fg = 'green'
@@ -96,11 +95,11 @@ def play(categorie):
 def list(category, show_answer, show_category):
     if category:
         try:
-            questions = get_category_questions(category)
+            questions = get_questions_of(category)
         except KeyError:
             click.echo(f'"{category}" is not a valid category')
     else:
-        questions = get_questions_from_json()
+        questions = get_all_questions()
 
     for type, question_list in questions.items():
         for question in question_list:

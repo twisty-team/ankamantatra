@@ -1,92 +1,85 @@
 {
-    "math": [
-        {
-            "multiple": [
-                {
-                    "question": "Which of the following are multiples of 3?",
-                    "options": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12
-                    ],
-                    "answer": [
-                        3,
-                        6,
-                        9,
-                        12
-                    ]
-                },
-                {
-                    "question": "Which of the following are multiples of 3?",
-                    "options": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12
-                    ],
-                    "answer": [
-                        3,
-                        6,
-                        9,
-                        12
-                    ]
-                }
-            ]
-        },
-        {
-            "unique": [
-                {
-                    "question": "Who amongs the following is a mathematician?",
-                    "options": [
-                        "Albert Einstein",
-                        "Isaac Newton",
-                        "Leonardo Da Vinci",
-                        "Charles Darwin"
-                    ],
-                    "answer": "Isaac Newton"
-                },
-                {
-                    "question": "Who amongs the following is a mathematician?",
-                    "options": [
-                        "Albert Einstein",
-                        "Isaac Newton",
-                        "Leonardo Da Vinci",
-                        "Charles Darwin"
-                    ],
-                    "answer": "Isaac Newton"
-                }
-            ]
-        },
-        {
-            "number": [
-                {
-                    "question": "How many countries are in Africa?",
-                    "answer": 54
-                },
-                {
-                    "question": "How many countries are in Africa?",
-                    "answer": 54
-                }
-            ]
-        },
-        {
+    "math": {
+        "multiple": [
+            {
+                "question": "Which of the following are multiples of 3?",
+                "options": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12
+                ],
+                "answer": [
+                    3,
+                    6,
+                    9,
+                    12
+                ]
+            },
+            {
+                "question": "Which of the following are multiples of 3?",
+                "options": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12
+                ],
+                "answer": [
+                    3,
+                    6,
+                    9,
+                    12
+                ]
+            }
+        ],
+        "unique": [
+            {
+                "question": "Who amongs the following is a mathematician?",
+                "options": [
+                    "Albert Einstein",
+                    "Isaac Newton",
+                    "Leonardo Da Vinci",
+                    "Charles Darwin"
+                ],
+                "answer": "Isaac Newton"
+            },
+            {
+                "question": "Who amongs the following is a mathematician?",
+                "options": [
+                    "Albert Einstein",
+                    "Isaac Newton",
+                    "Leonardo Da Vinci",
+                    "Charles Darwin"
+                ],
+                "answer": "Isaac Newton"
+            }
+        ],
+        "number": [
+            {
+                "question": "How many countries are in Africa?",
+                "answer": 54
+            },
+            {
+                "question": "How many countries are in Africa?",
+                "answer": 54
+            }
+        ],
         "string": [
             {
                 "question": "How many countries are in Africa?",
@@ -97,280 +90,271 @@
                 "answer": "test"
             }
         ]
-        }
-    ],
-    "science": [
-        {
-            "unique": [
-                {
-                    "question": "What is the heaviest organ in the human body?",
-                    "options": [
-                        "Heart",
-                        "Brain",
-                        "Lungs",
-                        "Liver"
-                    ],
-                    "answer": "Liver"
-                },
-                {
-                    "question": "Who discovered penicillin?",
-                    "options": [
-                        "Alexander Fleming",
-                        "Albert Einstein",
-                        "Isaac Newton",
-                        "Leonardo Da Vinci"
-                    ],
-                    "answer": "Alexander Fleming"
-                }
-            ],
-            "multiple": [
-                {
-                    "question": "Which of the following are not element of the periodic table?",
-                    "options": [
-                        "Hydrogen",
-                        "Carbon",
-                        "Oxygen",
-                        "Vibranium",
-                        "Gold",
-                        "Silver",
-                        "Adamantium"
-                    ],
-                    "answer": [
-                        "Vibranium",
-                        "Adamantium"
-                    ]
-                },
-                {
-                    "question": "Which of the following are insects?",
-                    "options": [
-                        "Ant",
-                        "Lion",
-                        "Tiger",
-                        "Elephant",
-                        "Spider",
-                        "Mosquito",
-                        "Fly",
-                        "Bee"
-                    ],
-                    "answer": [
-                        "Ant",
-                        "Mosquito",
-                        "Fly",
-                        "Bee"
-                    ]
-                }
-            ],
-            "number": [
-                {
-                    "question": "How many bones are in the human body?",
-                    "answer": 206
-                },
-                {
-                    "question": "How many planets are in the solar system?",
-                    "answer": 8
-                },
-                {
-                    "question": "How many days are in a year?",
-                    "answer": 365
-                },
-                {
-                    "question": "How many days are in a leap year?",
-                    "answer": 366
-                }
-            ],
-            "string": [
-                {
-                    "question": "What branch of the medicine involve the study of blood?",
-                    "answer": "Hematology"
-                }
-            ]
-        }
-    ],
-    "history": [
-        {
-            "multiple": [
-                {
-                    "question": "Which of the following are not part of the 7 wonders of the world?",
-                    "options": [
-                        "Great Wall of China",
-                        "Chichen Itza",
-                        "Petra",
-                        "Colosseum",
-                        "Taj Mahal",
-                        "Machu Picchu",
-                        "Christ the Redeemer"
-                    ],
-                    "answer": [
-                        "Petra",
-                        "Machu Picchu"
-                    ]
-                }
-            ],
-            "unique": [
-                {
-                    "question": "Who was the first president of the United States?",
-                    "options": [
-                        "George Washington",
-                        "Abraham Lincoln",
-                        "Thomas Jefferson",
-                        "John Adams"
-                    ],
-                    "answer": "George Washington"
-                }
-            ],
-            "number": [
-                {
-                    "question": "How many years did the Cold War last?",
-                    "answer": 45
-                },
-                {
-                    "question": "How many years did the Second World War last?",
-                    "answer": 6
-                },
-                {
-                    "question": "How many years did the First World War last?",
-                    "answer": 4
-                }
-            ],
-            "string": [
-                {
-                    "question": "What is the name of the commander of the Yamato ship?",
-                    "answer": "Isoroku Yamamoto"
-                },
-                {
-                    "question": "What is the biggest of the empires of all time?",
-                    "answer": "British Empire"
-                },
-                {
-                    "question": "What is the name of the first human fossile?",
-                    "answer": "Lucy"
-                }
-            ]
-        }
-    ], 
-    "sports": [
-        {
-            "multiple": [
-                {
-                    "question": "Which of the following are not part of the 5 rings of the Olympic Games?",
-                    "options": [
-                        "Athletics",
-                        "Swimming",
-                        "Cycling",
-                        "Gymnastics",
-                        "Boxing",
-                        "Judo",
-                        "Taekwondo"
-                    ],
-                    "answer": [
-                        "Boxing",
-                        "Judo",
-                        "Taekwondo"
-                    ]
-                }
-            ],
-            "unique": [
-                {
-                    "question": "Who is the best football player of all time?",
-                    "options": [
-                        "Lionel Messi",
-                        "Cristiano Ronaldo",
-                        "Diego Maradona",
-                        "Pele"
-                    ],
-                    "answer": "Lionel Messi"
-                }
-            ],
-            "number": [
-                {
-                    "question": "How many players are in a football team?",
-                    "answer": 11
-                },
-                {
-                    "question": "How many players are in a basketball team?",
-                    "answer": 5
-                },
-                {
-                    "question": "How many players are in a volleyball team?",
-                    "answer": 6
-                },
-                {
-                    "question": "How many players are in a baseball team?",
-                    "answer": 9
-                },
-                {
-                    "question": "How many players are in a cricket team?",
-                    "answer": 11
-                }
-            ],
-            "string": [
-                {
-                    "question": "What is the name of the first football team?",
-                    "answer": "Notts County"
-                },
-                {
-                    "question": "What is the name of the first basketball team?",
-                    "answer": "Olympia"
-                },
-                {
-                    "question": "What is the name of the first volleyball team?",
-                    "answer": "Mintonette"
-                },
-                {
-                    "question": "What is the name of the first baseball team?",
-                    "answer": "Knickerbockers"
-                },
-                {
-                    "question": "What is the name of the first cricket team?",
-                    "answer": "Marylebone Cricket Club"
-                }
-            ]
-        }
-    ],
-    "programming": [
-        {
-            "multiple": [
-                {
-                    "question": "Which of the following are not programming languages?",
-                    "options": [
-                        "Python",
-                        "Angady",
-                        "C#",
-                        "JavaScript",
-                        "Voay",
-                        "PHP",
-                        "Ruby"
-                    ],
-                    "answer": [
-                        "Angady",
-                        "Voay"
-                    ]
-                }
-            ],
-            "unique": [
-                {
-                    "question": "Who is the creator of Python?",
-                    "options": [
-                        "Guido van Rossum",
-                        "Bjarne Stroustrup",
-                        "James Gosling",
-                        "Dennis Ritchie"
-                    ],
-                    "answer": "Guido van Rossum"
-                }
-            ],
-            "number": [
-                {
-                    "question": "How many programming languages are there?",
-                    "answer": 700
-                }
-            ],
-            "string": [
-                {
-                    "question": "What is the name of the first programming language?",
-                    "answer": "Fortran"
-                }
-            ]
-        }
-    ]
+    },
+    "science": {
+        "unique": [
+            {
+                "question": "What is the heaviest organ in the human body?",
+                "options": [
+                    "Heart",
+                    "Brain",
+                    "Lungs",
+                    "Liver"
+                ],
+                "answer": "Liver"
+            },
+            {
+                "question": "Who discovered penicillin?",
+                "options": [
+                    "Alexander Fleming",
+                    "Albert Einstein",
+                    "Isaac Newton",
+                    "Leonardo Da Vinci"
+                ],
+                "answer": "Alexander Fleming"
+            }
+        ],
+        "multiple": [
+            {
+                "question": "Which of the following are not element of the periodic table?",
+                "options": [
+                    "Hydrogen",
+                    "Carbon",
+                    "Oxygen",
+                    "Vibranium",
+                    "Gold",
+                    "Silver",
+                    "Adamantium"
+                ],
+                "answer": [
+                    "Vibranium",
+                    "Adamantium"
+                ]
+            },
+            {
+                "question": "Which of the following are insects?",
+                "options": [
+                    "Ant",
+                    "Lion",
+                    "Tiger",
+                    "Elephant",
+                    "Spider",
+                    "Mosquito",
+                    "Fly",
+                    "Bee"
+                ],
+                "answer": [
+                    "Ant",
+                    "Mosquito",
+                    "Fly",
+                    "Bee"
+                ]
+            }
+        ],
+        "number": [
+            {
+                "question": "How many bones are in the human body?",
+                "answer": 206
+            },
+            {
+                "question": "How many planets are in the solar system?",
+                "answer": 8
+            },
+            {
+                "question": "How many days are in a year?",
+                "answer": 365
+            },
+            {
+                "question": "How many days are in a leap year?",
+                "answer": 366
+            }
+        ],
+        "string": [
+            {
+                "question": "What branch of the medicine involve the study of blood?",
+                "answer": "Hematology"
+            }
+        ]
+    },
+    "history": {
+        "multiple": [
+            {
+                "question": "Which of the following are not part of the 7 wonders of the world?",
+                "options": [
+                    "Great Wall of China",
+                    "Chichen Itza",
+                    "Petra",
+                    "Colosseum",
+                    "Taj Mahal",
+                    "Machu Picchu",
+                    "Christ the Redeemer"
+                ],
+                "answer": [
+                    "Petra",
+                    "Machu Picchu"
+                ]
+            }
+        ],
+        "unique": [
+            {
+                "question": "Who was the first president of the United States?",
+                "options": [
+                    "George Washington",
+                    "Abraham Lincoln",
+                    "Thomas Jefferson",
+                    "John Adams"
+                ],
+                "answer": "George Washington"
+            }
+        ],
+        "number": [
+            {
+                "question": "How many years did the Cold War last?",
+                "answer": 45
+            },
+            {
+                "question": "How many years did the Second World War last?",
+                "answer": 6
+            },
+            {
+                "question": "How many years did the First World War last?",
+                "answer": 4
+            }
+        ],
+        "string": [
+            {
+                "question": "What is the name of the commander of the Yamato ship?",
+                "answer": "Isoroku Yamamoto"
+            },
+            {
+                "question": "What is the biggest of the empires of all time?",
+                "answer": "British Empire"
+            },
+            {
+                "question": "What is the name of the first human fossile?",
+                "answer": "Lucy"
+            }
+        ]
+    },
+    "sports": {
+        "multiple": [
+            {
+                "question": "Which of the following are not part of the 5 rings of the Olympic Games?",
+                "options": [
+                    "Athletics",
+                    "Swimming",
+                    "Cycling",
+                    "Gymnastics",
+                    "Boxing",
+                    "Judo",
+                    "Taekwondo"
+                ],
+                "answer": [
+                    "Boxing",
+                    "Judo",
+                    "Taekwondo"
+                ]
+            }
+        ],
+        "unique": [
+            {
+                "question": "Who is the best football player of all time?",
+                "options": [
+                    "Lionel Messi",
+                    "Cristiano Ronaldo",
+                    "Diego Maradona",
+                    "Pele"
+                ],
+                "answer": "Lionel Messi"
+            }
+        ],
+        "number": [
+            {
+                "question": "How many players are in a football team?",
+                "answer": 11
+            },
+            {
+                "question": "How many players are in a basketball team?",
+                "answer": 5
+            },
+            {
+                "question": "How many players are in a volleyball team?",
+                "answer": 6
+            },
+            {
+                "question": "How many players are in a baseball team?",
+                "answer": 9
+            },
+            {
+                "question": "How many players are in a cricket team?",
+                "answer": 11
+            }
+        ],
+        "string": [
+            {
+                "question": "What is the name of the first football team?",
+                "answer": "Notts County"
+            },
+            {
+                "question": "What is the name of the first basketball team?",
+                "answer": "Olympia"
+            },
+            {
+                "question": "What is the name of the first volleyball team?",
+                "answer": "Mintonette"
+            },
+            {
+                "question": "What is the name of the first baseball team?",
+                "answer": "Knickerbockers"
+            },
+            {
+                "question": "What is the name of the first cricket team?",
+                "answer": "Marylebone Cricket Club"
+            }
+        ]
+    },
+    "programming": {
+        "multiple": [
+            {
+                "question": "Which of the following are not programming languages?",
+                "options": [
+                    "Python",
+                    "Angady",
+                    "C#",
+                    "JavaScript",
+                    "Voay",
+                    "PHP",
+                    "Ruby"
+                ],
+                "answer": [
+                    "Angady",
+                    "Voay"
+                ]
+            }
+        ],
+        "unique": [
+            {
+                "question": "Who is the creator of Python?",
+                "options": [
+                    "Guido van Rossum",
+                    "Bjarne Stroustrup",
+                    "James Gosling",
+                    "Dennis Ritchie"
+                ],
+                "answer": "Guido van Rossum"
+            }
+        ],
+        "number": [
+            {
+                "question": "How many programming languages are there?",
+                "answer": 700
+            }
+        ],
+        "string": [
+            {
+                "question": "What is the name of the first programming language?",
+                "answer": "Fortran"
+            }
+        ]
+    }
 }
