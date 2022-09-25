@@ -1,4 +1,4 @@
-# ankamantatra
+# ankamantatra ❔
 *Techzara WCC2 final week*
 
 A simple CLI quizz game made.
@@ -6,7 +6,7 @@ The user can play within a specific category or mix them all.
 A game session consists of 4 questions, each of different type.
 A the end of a session, the user is prompted whether he wants to play again or not.
 
-![preview.gif]()
+![preview.gif](preview.gif)
 
 ## Installation
 Type in the terminal :
