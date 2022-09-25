@@ -123,28 +123,6 @@
         ]
     },
     "science": {
-        "unique": [
-            {
-                "question": "What is the heaviest organ in the human body?",
-                "options": [
-                    "Heart",
-                    "Brain",
-                    "Lungs",
-                    "Liver"
-                ],
-                "answer": "Liver"
-            },
-            {
-                "question": "Who discovered penicillin?",
-                "options": [
-                    "Alexander Fleming",
-                    "Albert Einstein",
-                    "Isaac Newton",
-                    "Leonardo Da Vinci"
-                ],
-                "answer": "Alexander Fleming"
-            }
-        ],
         "multiple": [
             {
                 "question": "Which of the following are not element of the periodic table?",
@@ -182,6 +160,37 @@
                 ]
             }
         ],
+        "unique": [
+            {
+                "question": "What is the heaviest organ in the human body?",
+                "options": [
+                    "Heart",
+                    "Brain",
+                    "Lungs",
+                    "Liver"
+                ],
+                "answer": "Liver"
+            },
+            {
+                "question": "Who discovered penicillin?",
+                "options": [
+                    "Alexander Fleming",
+                    "Albert Einstein",
+                    "Isaac Newton",
+                    "Leonardo Da Vinci"
+                ],
+                "answer": "Alexander Fleming"
+            },
+            {
+                "question": "How many teeth does an adult human have?",
+                "options": [
+                    28,
+                    30,
+                    32
+                ],
+                "answer": 32
+            }
+        ],
         "number": [
             {
                 "question": "How many bones are in the human body?",
@@ -204,6 +213,14 @@
             {
                 "question": "What branch of the medicine involve the study of blood?",
                 "answer": "Hematology"
+            },
+            {
+                "question": "What is the biggest planet in our solar system?",
+                "answer": "Jupiter"
+            },
+            {
+                "question": "What is the hardest natural substance on Earth?",
+                "answer": "Diamond"
             }
         ]
     },
@@ -236,6 +253,26 @@
                     "John Adams"
                 ],
                 "answer": "George Washington"
+            },
+            {
+                "question": "What was the term for the official policy of racial segregation in South Africa until 1994?",
+                "options": [
+                    "Oversight",
+                    "Apartheid",
+                    "Libel",
+                    "Civility"
+                ],
+                "answer": "Apartheid"
+            },
+            {
+                "question": "In 1912, which famous human made sea vessel sunk?",
+                "options": [
+                    "Le Raymound",
+                    "Hans Hedtoft",
+                    "Titanic",
+                    "Albatross"
+                ],
+                "answer": "Titanic"
             }
         ],
         "number": [
@@ -285,6 +322,23 @@
                     "Judo",
                     "Taekwondo"
                 ]
+            },
+            {
+                "question": "which of these sports are outdor?",
+                "options": [
+                    "Basketball",
+                    "Surfing",
+                    "Cycling",
+                    "Gymnastics",
+                    "Boxing",
+                    "Snowboarding",
+                    "Taekwondo"
+                ],
+                "answer": [
+                    "Surfing",
+                    "Cycling",
+                    "Snowboarding"
+                ]
             }
         ],
         "unique": [
@@ -297,6 +351,16 @@
                     "Pele"
                 ],
                 "answer": "Lionel Messi"
+            },
+            {
+                "question": "What sport is best known as the ‘king of sports’?",
+                "options": [
+                    "Voley",
+                    "Soccer",
+                    "Basketball",
+                    "Swimming"
+                ],
+                "answer": "Soccer"
             }
         ],
         "number": [
