@@ -12,7 +12,7 @@ A the end of a session, the user is prompted whether he wants to play again or n
 ![preview.gif](preview.gif)
 
 ## ⚒️ Installation
-Type in the terminal :
+To install from [pypi](https://pypi.org/project/ankamantatra/), type in the terminal:
 ```sh
 pip install ankamantatra
 ```
