@@ -37,7 +37,8 @@ def do_quiz(categorie):
                     if question["options"][int(ind) - 1] in question['answer']:
                         count += 1
                 except:
-                    click.echo(click.style("Response should be a suite of integer, your answer is considered to False", fg='red'))
+                    result['Q1'] = False
+                    click.echo(click.style("The expected response is a sequence of number, your answer is considered wrong", fg='red'))
             if count == len(question['answer']):
                 result['Q1'] = True
                 number_of_good_response += 1
@@ -59,7 +60,8 @@ def do_quiz(categorie):
                 else:
                     result['Q2'] = False
             except:
-                click.echo(click.style("Response should be a integer, your answer is considered to False", fg='red'))
+                result['Q2'] = False
+                click.echo(click.style("The expected response is of type number, your answer is considered wrong", fg='red'))
 
         elif type == "number":
             reponse = click.prompt("your answer ", type=str)
@@ -70,11 +72,12 @@ def do_quiz(categorie):
                 else:
                     result['Q3'] = False
             except:
-                click.echo(click.style("Response should be a integer, your answer is considered to False", fg='red'))
+                result['Q3'] = False
+                click.echo(click.style("The expected response is of type number, your answer is considered wrong", fg='red'))
             
         elif type == "string":
             reponse = click.prompt("your answer ", type=str)
-            if reponse == question['answer']:
+            if reponse.lower() == question['answer'].lower():
                 number_of_good_response += 1
                 result['Q4'] = True
             else:
@@ -107,7 +110,6 @@ def do_quiz(categorie):
 @click.option('categorie', '--categorie', help="Specify Quiz categorie")
 def play(categorie):
     click.echo(click.style('___QUIZ APP___', fg="green", bold=True))
-    click.echo('')
     categories = get_categories()
     index = 1
     while categorie not in categories:
