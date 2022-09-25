@@ -44,7 +44,7 @@ def quiz_operation(type, questions, result):
                     )
                     break
 
-                if  ind >= len(question['options']):
+                if  ind >= len(question['options']) or ind <= 0:
                     is_valid = False
                     click.echo(
                         click.style(
@@ -93,7 +93,7 @@ def quiz_operation(type, questions, result):
                         )
                     )
                 if is_parsable_to_int:
-                    if int(rep_arr[0]) >= len(question['options']):
+                    if int(rep_arr[0]) >= len(question['options']) or int(rep_arr[0]) < 0:
                         is_valid = False
                         click.echo(
                             click.style(
@@ -182,7 +182,16 @@ def do_quiz(categorie):
             f += 1
         click.echo(f"{q} : {res}")
     success_rate = (v / (v + f)) * 100
-    click.echo(click.style(f"Success rate : {success_rate} %", fg="green"))
+    color = ''
+    if success_rate >= 75:
+        color = 'green'
+    elif success_rate >= 50:
+        color = 'orange'
+    elif success_rate >= 25:
+        color = 'yellow'
+    else:
+        color = 'red'
+    click.echo(click.style(f"Success rate : {success_rate} %", fg=color))
 
 
 @click.command(
@@ -194,6 +203,7 @@ def do_quiz(categorie):
 )
 @click.option('category', '--category', '-c', help="Specify Quiz categorie")
 def play(category):
+    click.clear()
     click.echo(click.style('___QUIZ APP___', fg="green", bold=True))
     categories = get_categories()
     index = 1
