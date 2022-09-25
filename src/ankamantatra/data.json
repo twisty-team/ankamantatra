@@ -25,26 +25,39 @@
                 ]
             },
             {
-                "question": "Which of the following are multiples of 3?",
+                "question": "What 3 numbers result in the same answer when they are added or multiplied altogether? ",
                 "options": [
                     1,
                     2,
                     3,
                     4,
                     5,
-                    6,
-                    7,
-                    8,
-                    9,
-                    10,
-                    11,
-                    12
+                    6
                 ],
                 "answer": [
-                    3,
-                    6,
-                    9,
-                    12
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "question": "Absolute Value Of Following Integers -5, -1, 0, 2, 4 ?",
+                "options": [
+                    -5,
+                    5,
+                    1,
+                    4,
+                    -2,
+                    0,
+                    2,
+                    -1
+                ],
+                "answer": [
+                    5,
+                    1,
+                    4,
+                    2,
+                    0
                 ]
             }
         ],
@@ -60,34 +73,52 @@
                 "answer": "Isaac Newton"
             },
             {
-                "question": "Who amongs the following is a mathematician?",
+                "question": "What is the highest common factor of the numbers 30 and 132?",
                 "options": [
-                    "Albert Einstein",
-                    "Isaac Newton",
-                    "Leonardo Da Vinci",
-                    "Charles Darwin"
+                    3,
+                    10,
+                    6,
+                    9
                 ],
-                "answer": "Isaac Newton"
+                "answer": 6
+            },
+            {
+                "question": "What is the name of a triangle that has two sides of the same length?",
+                "options": [
+                    "isosceles",
+                    "Equilateral",
+                    "Right-angled",
+                    "Scalene"
+                ],
+                "answer": 6
             }
         ],
         "number": [
             {
-                "question": "How many countries are in Africa?",
-                "answer": 54
+                "question": "How many vertices are present on a cube?",
+                "answer": 8
             },
             {
-                "question": "How many countries are in Africa?",
-                "answer": 54
+                "question": "From the number 0 to the number 1000, the letter “A” appears only in?",
+                "answer": 1000
+            },
+            {
+                "question": "Adding the numbers between 1 to 100 consecutively (1+2+3+4+…) gives you what final answer?",
+                "answer": 5050
             }
         ],
         "string": [
             {
-                "question": "How many countries are in Africa?",
-                "answer": "test"
+                "question": "what does the number 3.14 represent?",
+                "answer": "PI"
             },
             {
-                "question": "How many countries are in Africa?",
-                "answer": "test"
+                "question": "An object is thrown into the air. After a while, it falls back to the Earth. The flight path of the object traces what shape?",
+                "answer": "Parabole"
+            },
+            {
+                "question": "What is the year 1982 in Roman Numerals?",
+                "answer": "MCMLXXXII"
             }
         ]
     },
