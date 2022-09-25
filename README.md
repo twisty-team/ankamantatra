@@ -1,4 +1,4 @@
-# ankamantatra ❔
+# 🤔 ankamantatra
 *Techzara WCC2 final week*
 
 A simple CLI quizz game made.
@@ -8,7 +8,7 @@ A the end of a session, the user is prompted whether he wants to play again or n
 
 ![preview.gif](preview.gif)
 
-## Installation
+## ⚒️ Installation
 Type in the terminal :
 ```sh
 pip install ankamantatra
@@ -28,7 +28,7 @@ And finally
 ```sh
 poetry run python -m ankamanatra
 ```
-## Usage
+## ▶ Usage
 ```
 Usage: ankamantatra [OPTIONS] COMMAND [ARGS]...
 
@@ -44,12 +44,12 @@ Commands:
 
 ```
 
-## Features
+## 🚀 Features
 - Play quizz
 - List questions or categories
 
 
-## TODO
+## ✔️ TODO
 - [x] List available questions
 - [ ] List available categories
 - [x] Play quizz
