@@ -17,33 +17,39 @@ from click_help_colors import HelpColorsCommand
 def list_questions(category, show_answer, show_category, category_only):
 
     def display_question(question, category, type):
+
         try:
-            click.echo(
-                f'{question["question"]} ({type} in {question["options"]})')
+            click.echo(f'{question["question"]} ', nl=False)
+            click.echo(click.style(f'({type} in {question["options"]})', fg='blue'))
         except:
-            click.echo(f'{question["question"]} ({type})')
+            click.echo(f'{question["question"]} ' + click.style(f'({type})', fg='blue'))
         if show_answer:
-            click.echo(f'--> {question["answer"]}\n')
+            click.echo(click.style(f'--> {question["answer"]}\n', fg='green'))
         if show_category:
-            click.echo(f'{category}')
+            click.echo(click.style(f'[{category}]\n', fg='yellow'))
 
     if category_only:
+        click.echo(click.style('Available categories:\n', fg='yellow'))
         categories = get_categories()
         for category in categories:
-            click.echo(category)
+            click.echo(f'- {category}')
         return
 
     if category:
+        click.echo(click.style(f'Questions about {category}\n', fg='yellow'))
         try:
             questions = get_questions_of(category)
         except KeyError:
-            click.echo(f'"{category}" is not a valid category.\n Type "ankamantatra list --category-only" to see all available categories.')
+            click.echo(click.style(f'"{category}" is not a valid category.\n', fg='red') + 'Type "ankamantatra list --category-only" to see all available categories.')
             return
         for type, questions in questions.items():
             for question in questions:
                 display_question(question, category, type)
     else:
         questions = get_all_questions()
+        click.echo(click.style('Question ', fg='yellow'), nl=False)
+        click.echo(click.style('(type and optional choices)\n', fg='blue'))
+        
         for category, type in questions.items():
             for type, questions in type.items():
                 for question in questions:
