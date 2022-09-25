@@ -52,7 +52,6 @@ def quiz_operation(type, questions, result):
         click.echo(f"> Options : {opt}")
         reponse_index = click.prompt("your answer ")
         rep_arr = reponse_index.split(" ")
-        print(rep_arr)
         if len(rep_arr) == 1:  
             try:
                 if question["options"][int(reponse_index) - 1] in question['answer']:
