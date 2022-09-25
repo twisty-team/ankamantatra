@@ -153,16 +153,16 @@ def do_quiz(categorie):
     help_options_color='green'
 )
 @click.option('category', '--category', '-c', help="Specify Quiz categorie")
-def play(categorie):
+def play(category):
     click.echo(click.style('___QUIZ APP___', fg="green", bold=True))
     categories = get_categories()
     index = 1
-    if categorie is None:
+    if category is None:
         choice = click.confirm(
             'Category is not specified! Do you want to choose a category? ' + click.style('[default = No]', bg="blue"),
             default=False)
         if choice:
-            while categorie not in categories:
+            while category not in categories:
                 fg = 'green'
                 if index > 1:
                     fg = 'red'
@@ -176,13 +176,13 @@ def play(categorie):
                 indice_categorie = click.prompt("Category", type=int)
                 indice_categorie -= 1
                 if indice_categorie < len(categories) and indice_categorie >= 0:
-                    categorie = categories[indice_categorie]
+                    category = categories[indice_categorie]
                 index += 1
         else:
-            categorie = "all"
+            category = "all"
     else:
-        if categorie not in categories:
+        if category not in categories:
             click.echo('')
             click.echo(click.style("this category is not specified! default: Category = all", fg='yellow'))
-            categorie = 'all'
-    do_quiz(categorie)
+            category = 'all'
+    do_quiz(category)
