@@ -83,21 +83,6 @@ Options:
 - Play quizz
 - List questions or categories
 
-
-## ✔️ TODO
-- [x] List available questions
-- [x] List available categories
-- [x] Play quizz
-- [ ] Good error handling
-- [x] Populate data.json
-- [x] Utils functions
-- [ ] Add "Ankamantatra/Malagasy" category
-- [ ] Add automated testing
-- [ ] Add comments
-- [ ] Improve documentation
-  - [ ] Add bagdes (python, license, tested/coverage)
-
-
 ## Authors
 
 * [tbgracy](https://github.com/tbgracy)
