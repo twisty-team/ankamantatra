@@ -1,9 +1,15 @@
 import click
 
 from ankamantatra.utils import *
+from click_help_colors import HelpColorsCommand
 
-
-@click.command(name='list', help='List all available questions to play with.')
+@click.command(
+    name='list', 
+    help='List all available questions to play with.',
+    cls=HelpColorsCommand,
+    help_headers_color='yellow',
+    help_options_color='green'
+)
 @click.option('--category', '-c', help="Filter by TEXT")
 @click.option('--show-answer', '-sa', is_flag=True)
 @click.option('--show-category', '-sc', is_flag=True)
