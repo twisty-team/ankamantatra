@@ -117,17 +117,11 @@ def quiz_operation(type, questions, result):
             result['Q2'] = False
 
     elif type == "number":
-        reponse = click.prompt("your answer ", type=str)
-        try:
-            if int(reponse) == question['answer']:
-                result['Q3'] = True
-            else:
-                result['Q3'] = False
-        except:
+        reponse = click.prompt("your answer ", type=int)
+        if reponse == question['answer']:
+            result['Q3'] = True
+        else:
             result['Q3'] = False
-            click.echo(
-                click.style("The expected response is of type number, your answer is considered wrong",
-                            fg='red'))
 
     elif type == "string":
         reponse = click.prompt("your answer ", type=str)
@@ -165,6 +159,9 @@ def do_quiz(categorie):
         data = get_questions_of(categorie)
         index = 1
         for type, questions in data.items():
+            click.echo(click.style(
+                f'___Question {index}___ : type = {type}', fg="blue")
+            )
             result_of_game = quiz_operation(type ,questions, result)
             index += 1
 
