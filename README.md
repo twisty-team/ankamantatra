@@ -1,7 +1,10 @@
 # 🤔 ankamantatra
-*Techzara WCC2 final week*
+**Techzara WCC2 final week**
 
-A simple CLI quizz game made.
+A simple CLI quizz game.
+
+The name *ankamantatra* is a malagasy word that means *riddle*.
+
 The user can play within a specific category or mix them all.
 A game session consists of 4 questions, each of different type.
 A the end of a session, the user is prompted whether he wants to play again or not.
@@ -13,7 +16,7 @@ Type in the terminal :
 ```sh
 pip install ankamantatra
 ```
-Or you can clone this repository and install it manually by following the steps below:
+Or you can clone this repository and install it manually using [poetry](https://python-poetry.org/),  a tool for dependency management and packaging in Python, by following the following steps :
 ```sh
 git clone https://github.com/twisty-team/ankamantatra.git
 ```
@@ -24,9 +27,18 @@ pip install poetry
 # in the project root directory
 poetry build && poetry install
 ```
-And finally
+In some cases you may get a `KeyringLocked` error that you can bypass by typing :
 ```sh
-poetry run python -m ankamanatra
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+```
+## 🏃 How to run
+If you installed the package with pip, you can run the game by typing in the terminal :
+```sh
+ankamantatra
+```
+If you installed it manually using poetry, you can run the game by typing :
+```sh
+poetry run python -m ankamantatra
 ```
 ## ▶ Usage
 ```
@@ -42,6 +54,29 @@ Commands:
   list  List all available questions to play with.
   play  Use to play quiz game
 
+```
+
+```
+Usage: python -m ankamantatra play [OPTIONS]
+
+  Use to play quiz game
+
+Options:
+  -c, --categorie TEXT  Specify Quiz categorie
+  --help                Show this message and exit.
+```
+
+```
+Usage: python -m ankamantatra list [OPTIONS]
+
+  List all available questions to play with.
+
+Options:
+  -c, --category TEXT   Filter by TEXT
+  -sa, --show-answer
+  -sc, --show-category
+  --category-only       Show only the categories and hide questions
+  --help                Show this message and exit.
 ```
 
 ## 🚀 Features
@@ -60,6 +95,7 @@ Commands:
 - [ ] Add automated testing
 - [ ] Add comments
 - [ ] Improve documentation
+  - [ ] Add bagdes (python, license, tested/coverage)
 
 
 ## Authors
