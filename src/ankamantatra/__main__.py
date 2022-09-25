@@ -12,7 +12,7 @@ from .commands.play_quizz import play
     help_options_color='green'
 )
 @click.version_option(
-    version='0.6.0',
+    version='0.7.0',
     prog_name='Ankamantatra'
 )
 def main():
@@ -25,5 +25,13 @@ main.add_command(play)
 
 
 if __name__ == "__main__":
-    main()
+    print("""
+             _                               _        _             
+            | |                             | |      | |            
+  __ _ _ __ | | ____ _ _ __ ___   __ _ _ __ | |_ __ _| |_ _ __ __ _ 
+ / _` | '_ \| |/ / _` | '_ ` _ \ / _` | '_ \| __/ _` | __| '__/ _` |
+| (_| | | | |   < (_| | | | | | | (_| | | | | || (_| | |_| | | (_| |
+ \__,_|_| |_|_|\_\__,_|_| |_| |_|\__,_|_| |_|\__\__,_|\__|_|  \__,_|     
 
+    """)
+    main()
