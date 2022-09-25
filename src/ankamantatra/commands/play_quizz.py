@@ -10,7 +10,6 @@ def quiz_operation(type, questions, result):
     type = type
     questions = questions
     result = result
-    click.echo('')
     random_key = random.randrange(0, len(questions))
     question = questions[random_key]
     click.echo(click.style(f"> {question['question']}"))
@@ -35,7 +34,7 @@ def quiz_operation(type, questions, result):
                 result['Q1'] = False
                 click.echo(
                     click.style(
-                    "The expected response is a sequence of number, your answer is considered wrong",
+                    "The expected response is a sequence of number and should be among the options given , your answer is considered wrong",
                     fg='red'
                     )
                 )
@@ -52,16 +51,26 @@ def quiz_operation(type, questions, result):
             i += 1
         click.echo(f"> Options : {opt}")
         reponse_index = click.prompt("your answer ")
-        try:
-            if question["options"][int(reponse_index) - 1] in question['answer']:
-                result['Q2'] = True
-            else:
+        rep_arr = reponse_index.split(" ")
+        if len(rep_arr) == 1:  
+            try:
+                if question["options"][int(reponse_index) - 1] in question['answer']:
+                    result['Q2'] = True
+                else:
+                    result['Q2'] = False
+            except:
                 result['Q2'] = False
-        except:
+                click.echo(
+                    click.style("The expected response is of type number, your answer is considered wrong",
+                                fg='red'))
+        else:
             result['Q2'] = False
             click.echo(
-                click.style("The expected response is of type number, your answer is considered wrong",
-                            fg='red'))
+                click.style(
+                    "The expected response is unique, your answer is considered wrong",
+                    fg='red'
+                )
+            )
 
     elif type == "number":
         reponse = click.prompt("your answer ", type=str)
@@ -90,7 +99,8 @@ def do_quiz(categorie):
     number_of_good_answer = 0
     result = {}
     click.echo('')
-    click.echo(click.style('___Quiz categorie___ : ' + categorie, fg='blue'))
+    click.echo(click.style('___Quiz category___ : ' + categorie, fg='blue'))
+    click.echo('')
     if categorie == 'all':
         categories = get_categories()
         all_types = ['multiple', 'unique', 'number', 'string']
@@ -141,37 +151,37 @@ def do_quiz(categorie):
     help_headers_color='yellow',
     help_options_color='green'
 )
-@click.option('categorie', '--categorie', '-c', help="Specify Quiz categorie")
-def play(categorie):
-    """_Playing Quiz app_
-
-    Args:
-        categorie (_type_): _description_
-    """
+@click.option('category', '--category', '-c', help="Specify Quiz categorie")
+def play(category):
     click.echo(click.style('___QUIZ APP___', fg="green", bold=True))
     categories = get_categories()
     index = 1
-    if categorie is None:
+    if category is None:
         choice = click.confirm(
             'Category is not specified! Do you want to choose a category? ' + click.style('[default = No]', bg="blue"),
             default=False)
-    if choice:
-        while categorie not in categories:
-            fg = 'green'
-            if index > 1:
-                fg = 'red'
-            click.echo(click.style("Please choose categorie : ", fg=fg))
-            val = ""
-            i = 1
-            for cat in categories:
-                val += click.style(f"({i})", fg='yellow') + f" {cat}  "
-                i += 1
-            click.echo(val)
-            indice_categorie = click.prompt("Categorie ", type=int)
-            indice_categorie -= 1
-            if indice_categorie < len(categories) and indice_categorie >= 0:
-                categorie = categories[indice_categorie]
-            index += 1
+        if choice:
+            while category not in categories:
+                fg = 'green'
+                if index > 1:
+                    fg = 'red'
+                click.echo(click.style("Please choose category : ", fg=fg))
+                val = ""
+                i = 1
+                for cat in categories:
+                    val += click.style(f"({i})", fg='yellow') + f" {cat}  "
+                    i += 1
+                click.echo(val)
+                indice_categorie = click.prompt("Category", type=int)
+                indice_categorie -= 1
+                if indice_categorie < len(categories) and indice_categorie >= 0:
+                    category = categories[indice_categorie]
+                index += 1
+        else:
+            category = "all"
     else:
-        categorie = "all"
-    do_quiz(categorie)
+        if category not in categories:
+            click.echo('')
+            click.echo(click.style("this category is not specified! default: Category = all", fg='yellow'))
+            category = 'all'
+    do_quiz(category)

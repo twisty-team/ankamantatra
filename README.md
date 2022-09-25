@@ -86,7 +86,7 @@ Options:
 
 ## ✔️ TODO
 - [x] List available questions
-- [ ] List available categories
+- [x] List available categories
 - [x] Play quizz
 - [ ] Good error handling
 - [x] Populate data.json
