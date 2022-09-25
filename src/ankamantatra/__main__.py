@@ -1,9 +1,9 @@
 import click
 from click_help_colors import HelpColorsGroup, HelpColorsCommand
 
-from ankamantatra.utils import *
-from ankamantatra.commands.list_questions import list_questions
-from ankamantatra.commands.play_quizz import play
+from .utils import *
+from .commands.list_questions import list_questions
+from .commands.play_quizz import play
 
 
 @click.group(
@@ -12,7 +12,7 @@ from ankamantatra.commands.play_quizz import play
     help_options_color='green'
 )
 @click.version_option(
-    version='1.0',
+    version='0.6.0',
     prog_name='Ankamantatra'
 )
 def main():
