@@ -1,3 +1,4 @@
+from operator import is_
 from unittest import result
 import click
 import random
@@ -23,21 +24,42 @@ def quiz_operation(type, questions, result):
         click.echo(click.style(
             "N.B : your reponse should be separated by space, for example: 1 3 5", fg="yellow")
         )
-        reponses = click.prompt("your answer ", type=str)
-        rep_arr = reponses.split(' ')
+        # On verfie si les input de l'utilisateur sont parmis les listes
+        is_valid = False
+        rep_arr = []
+        while is_valid == False:
+            reponses = click.prompt("your answer ", type=str)
+            rep_arr = reponses.split(' ')
+            for rep in rep_arr:
+                ind = None
+                try:
+                    ind = int(rep) - 1
+                except:
+                    is_valid = False
+                    click.echo(
+                        click.style(
+                        "The expected response is a sequence of number and should be among the options given , Please Retry",
+                        fg='red'
+                        )
+                    )
+                    break
+
+                if  ind >= len(question['options']):
+                    is_valid = False
+                    click.echo(
+                        click.style(
+                        "The expected response is a sequence of number and should be among the options given , Please Retry",
+                        fg='red'
+                        )
+                    )
+                    break
+                else:
+                    is_valid = True
         count = 0
         for ind in rep_arr:
-            try:
-                if question["options"][int(ind) - 1] in question['answer']:
-                    count += 1
-            except:
-                result['Q1'] = False
-                click.echo(
-                    click.style(
-                    "The expected response is a sequence of number and should be among the options given , your answer is considered wrong",
-                    fg='red'
-                    )
-                )
+            if question["options"][int(ind) - 1] in question['answer']:
+                count += 1
+            
         if count == len(question['answer']):
             result['Q1'] = True
         else:
@@ -50,40 +72,56 @@ def quiz_operation(type, questions, result):
             opt += click.style(f"({i})", fg="yellow") + f" {val} "
             i += 1
         click.echo(f"> Options : {opt}")
-        reponse_index = click.prompt("your answer ")
-        rep_arr = reponse_index.split(" ")
-        if len(rep_arr) == 1:  
-            try:
-                if question["options"][int(reponse_index) - 1] in question['answer']:
-                    result['Q2'] = True
-                else:
-                    result['Q2'] = False
-            except:
-                result['Q2'] = False
+        
+        #on verifie si l'entree est valide
+        is_valid = False
+        rep_arr = []
+        while not is_valid:
+            reponse_index = click.prompt("your answer ")
+            rep_arr = reponse_index.split(" ")
+            if len(rep_arr) == 1:
+                is_parsable_to_int = False
+                try:
+                    int(rep_arr[0])
+                    is_parsable_to_int = True
+                except:
+                    is_valid = False
+                    click.echo(
+                        click.style(
+                            "The expected response is of type number, Please Retry",
+                            fg='red'
+                        )
+                    )
+                if is_parsable_to_int:
+                    if int(rep_arr[0]) >= len(question['options']):
+                        is_valid = False
+                        click.echo(
+                            click.style(
+                                "The expected response should be among the options given, Please Retry",
+                                fg='red'
+                            )
+                        )
+                    else:
+                        is_valid = True
+            else:
+                is_valid = False
                 click.echo(
-                    click.style("The expected response is of type number, your answer is considered wrong",
-                                fg='red'))
+                    click.style(
+                        "The expected response is unique, Please Retry",
+                        fg='red'
+                    )
+                )
+        if question["options"][int(rep_arr[0]) - 1] in question['answer']:
+            result['Q2'] = True
         else:
             result['Q2'] = False
-            click.echo(
-                click.style(
-                    "The expected response is unique, your answer is considered wrong",
-                    fg='red'
-                )
-            )
 
     elif type == "number":
-        reponse = click.prompt("your answer ", type=str)
-        try:
-            if int(reponse) == question['answer']:
-                result['Q3'] = True
-            else:
-                result['Q3'] = False
-        except:
+        reponse = click.prompt("your answer ", type=int)
+        if reponse == question['answer']:
+            result['Q3'] = True
+        else:
             result['Q3'] = False
-            click.echo(
-                click.style("The expected response is of type number, your answer is considered wrong",
-                            fg='red'))
 
     elif type == "string":
         reponse = click.prompt("your answer ", type=str)
@@ -121,6 +159,9 @@ def do_quiz(categorie):
         data = get_questions_of(categorie)
         index = 1
         for type, questions in data.items():
+            click.echo(click.style(
+                f'___Question {index}___ : type = {type}', fg="blue")
+            )
             result_of_game = quiz_operation(type ,questions, result)
             index += 1
 
