@@ -60,3 +60,10 @@ Commands:
 - [ ] Add automated testing
 - [ ] Add comments
 - [ ] Improve documentation
+
+
+## Authors
+
+* [tbgracy](https://github.com/tbgracy)
+
+* [rhja](https://github.com/radoheritiana)
