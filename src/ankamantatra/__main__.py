@@ -1,5 +1,5 @@
 import click
-from click_help_colors import HelpColorsGroup, HelpColorsCommand
+from click_help_colors import HelpColorsGroup
 
 from .utils import *
 from .commands.list_questions import list_questions

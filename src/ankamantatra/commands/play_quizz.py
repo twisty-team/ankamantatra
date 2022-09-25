@@ -1,5 +1,6 @@
 import click
 import random
+from click_help_colors import HelpColorsCommand
 
 from ankamantatra.utils import *
 
@@ -28,12 +29,15 @@ def do_quiz(categorie):
             click.echo(click.style(
                 "N.B : your reponse should be separated by space, for example: 1 3 5", fg="yellow")
             )
-            reponses = click.prompt("your answer ")
+            reponses = click.prompt("your answer ", type=str)
             rep_arr = reponses.split(' ')
             count = 0
             for ind in rep_arr:
-                if question["options"][int(ind) - 1] in question['answer']:
-                    count += 1
+                try:
+                    if question["options"][int(ind) - 1] in question['answer']:
+                        count += 1
+                except:
+                    click.echo(click.style("Response should be a suite of integer, your answer is considered to False", fg='red'))
             if count == len(question['answer']):
                 result['Q1'] = True
                 number_of_good_response += 1
@@ -48,22 +52,28 @@ def do_quiz(categorie):
                 i += 1
             click.echo(f"> Options : {opt}")
             reponse_index = click.prompt("your answer ")
-            if question["options"][int(reponse_index) - 1] in question['answer']:
-                number_of_good_response += 1
-                result['Q2'] = True
-            else:
-                result['Q2'] = False
+            try:
+                if question["options"][int(reponse_index) - 1] in question['answer']:
+                    number_of_good_response += 1
+                    result['Q2'] = True
+                else:
+                    result['Q2'] = False
+            except:
+                click.echo(click.style("Response should be a integer, your answer is considered to False", fg='red'))
 
         elif type == "number":
-            reponse = click.prompt("your answer > ", type=str)
-            if int(reponse) == question['answer']:
-                number_of_good_response += 1
-                result['Q3'] = True
-            else:
-                result['Q3'] = False
-
+            reponse = click.prompt("your answer ", type=str)
+            try:
+                if int(reponse) == question['answer']:
+                    number_of_good_response += 1
+                    result['Q3'] = True
+                else:
+                    result['Q3'] = False
+            except:
+                click.echo(click.style("Response should be a integer, your answer is considered to False", fg='red'))
+            
         elif type == "string":
-            reponse = click.prompt("your answer > ", type=str)
+            reponse = click.prompt("your answer ", type=str)
             if reponse == question['answer']:
                 number_of_good_response += 1
                 result['Q4'] = True
@@ -87,8 +97,14 @@ def do_quiz(categorie):
     click.echo(click.style(f"Success rate : {success_rate} %", fg="green"))
 
 
-@click.command(name="play", help="Use to play quiz game")
-@click.option('categorie', '--categorie', help="Help for Play command")
+@click.command(
+    name="play", 
+    help="Use to play quiz game",
+    cls=HelpColorsCommand,
+    help_headers_color='yellow',
+    help_options_color='green'
+)
+@click.option('categorie', '--categorie', help="Specify Quiz categorie")
 def play(categorie):
     click.echo(click.style('___QUIZ APP___', fg="green", bold=True))
     click.echo('')
