@@ -1,0 +1,177 @@
+{
+    "all_questions": {
+        "categories": [
+            {
+                "categorie" : "Math",
+                "types" : [
+                    {
+                        "type": "string",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "integer",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "choix multiple",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "choix unique",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "categorie" : "Geography",
+                "types" : [
+                    {
+                        "type": "string",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "integer",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "choix multiple",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "choix unique",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "categorie" : "Anime",
+                "types" : [
+                    {
+                        "type": "string",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "integer",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "choix multiple",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "choix unique",
+                        "questions": [
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            },
+                            {
+                                "question": "Ici la question",
+                                "answer": "Ici la reponse"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    } 
+}
