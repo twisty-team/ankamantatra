@@ -111,7 +111,7 @@ def quiz_operation(type, questions, result):
                         fg='red'
                     )
                 )
-        if question["options"][int(rep_arr[0]) - 1] in question['answer']:
+        if question["options"][int(rep_arr[0]) - 1] == question['answer']:
             result['Q2'] = True
         else:
             result['Q2'] = False
@@ -166,8 +166,8 @@ def do_quiz(categorie):
             index += 1
 
     number_of_good_answer = 0
-    for q, r in result_of_game:
-        if r:
+    for q, r in result_of_game.items():
+        if r == True:
             number_of_good_answer += 1
             
     click.echo('')
@@ -185,8 +185,6 @@ def do_quiz(categorie):
     color = ''
     if success_rate >= 75:
         color = 'green'
-    elif success_rate >= 50:
-        color = 'orange'
     elif success_rate >= 25:
         color = 'yellow'
     else:
