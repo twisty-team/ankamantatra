@@ -12,7 +12,7 @@ from .commands.play_quizz import play
     help_options_color='green'
 )
 @click.version_option(
-    version='0.7.2',
+    version='1.0.0',
     prog_name='Ankamantatra'
 )
 def main():

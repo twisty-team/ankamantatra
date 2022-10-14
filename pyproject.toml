@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ankamantatra"
-version = "0.7.2"
+version = "1.0.0"
 description = "A simple CLI quizz game"
 authors = ["Tsierenana Bôtramanagna Gracy <gtsierenana@gmail.com>", "Radoheritiana <radoheritiana.rhja.123@gmail.com>"]
 readme = "README.md"

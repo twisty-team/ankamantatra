@@ -1,6 +1,6 @@
 [[package]]
 name = "build"
-version = "0.8.0"
+version = "1.0.0"
 description = "A simple, correct PEP 517 build frontend"
 category = "dev"
 optional = false
