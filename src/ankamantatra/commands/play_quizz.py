@@ -93,7 +93,7 @@ def quiz_operation(type, questions, result):
                         )
                     )
                 if is_parsable_to_int:
-                    if int(rep_arr[0]) >= len(question['options']) or int(rep_arr[0]) <= 0:
+                    if int(rep_arr[0]) > len(question['options']) or int(rep_arr[0]) <= 0:
                         is_valid = False
                         click.echo(
                             click.style(
