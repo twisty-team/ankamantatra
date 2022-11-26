@@ -10,7 +10,10 @@ A game session consists of 4 questions, each of different type.
 A the end of a session, the user is prompted whether he wants to play again or not.
 
 ![preview.gif](preview.gif)
+<center>
 
+<img src=https://img.shields.io/pypi/dm/ankamantatra?label=DOWNLOADS&style=for-the-badge/>
+</center>
 ## ⚒️ Installation
 To install from [pypi](https://pypi.org/project/ankamantatra/), type in the terminal:
 ```sh
